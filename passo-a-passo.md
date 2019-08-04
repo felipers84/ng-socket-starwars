@@ -95,3 +95,4 @@ export interface Mensagem {
 ```
 
 - `ng g c terminal`
+  - Migrar o código do enviarMensagem para esta tela, assim como o textarea e o button
