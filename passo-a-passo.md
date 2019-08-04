@@ -2,7 +2,7 @@
 - Nova solução `ng new ng-websocket-sw`
   - Selecione para utilizar angular routing
 - O `app.component` será utilizado para o display do texto
-  - Criar um `<p>` com classe 'paragrafo'
+  - Criar um `<p>` com classe `paragrafo`
     - Colocar texto dummy
   - Criar uma `<div class="camada-gradiente">`
   - Abrir o `app.component.scss` para adicionar e definir o fundo preto e o estilo do parágrafo
@@ -20,7 +20,7 @@ $amarelo-star-wars: #ffd700;
   overflow: hidden;
 }
 
-.rolling-paragraph {
+.paragrafo {
   text-align: justify;
   position: absolute;
   bottom: 0;
