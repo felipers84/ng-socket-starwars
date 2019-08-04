@@ -79,6 +79,36 @@ export interface Mensagem {
 <button (click)="enviarMensagem(txtArea.value); txtArea.value = ''">ENVIAR TEXTO</button>
 ```
 - `ng g s websocket-client`
+```ts
+import {WebSocketSubject} from 'rxjs/webSocket';
+import {Observable, Subject} from 'rxjs';
+import {Injectable} from '@angular/core';
+import {Mensagem} from './mensagem.model';
+
+
+@Injectable()
+export class WebSocketClientService {
+  private socket: WebSocketSubject<Mensagem>;
+
+  public subMensagens: Subject<Mensagem>;
+
+  constructor() {
+
+    this.socket = new WebSocketSubject<Mensagem>('ws://localhost:8765');
+    this.subMensagens = new Subject<Mensagem>();
+    
+    this.socket.subscribe(mensagem => {
+      this.subMensagens.next(mensagem);
+    }, err => console.error(err));
+  }
+
+  enviarMensagem(mensagem: string) {
+    this.socket.next({dataHoramensagem: new Date(), mensagem});
+  }
+
+}
+
+```
 
 - Atualizar o `app.component.ts`
 ```typescript
@@ -96,3 +126,10 @@ export interface Mensagem {
 
 - `ng g c terminal`
   - Migrar o código do enviarMensagem para esta tela, assim como o textarea e o button
+  - Adicionar rota:
+  
+```typescript
+{ path: 'crisis-center', component: CrisisListComponent },
+
+```
+
