@@ -60,10 +60,12 @@ export interface Mensagem {
   dataHoramensagem: Date;
 }
 ```
-- Em `app.component` criar método de `EnviarMensagem`, criando o array de mensagens
+- Em `app.component` criar método de `enviarMensagem`, criando o array de mensagens
 
 ```typescript
-  public inserirMensagem(msg: String) {
+  mensagens = new Array<Mensagem>();
+  
+  public enviarMensagem(msg: String) {
     this.mensagens.push({ mensagem: this.novaMensagem, dataHoramensagem: new Date() });
     setTimeout(() => this.mensagens.splice(0), this.duracaoMensagemTelaEmSegundos * 1000);
     //this.websocketService.enviarMensagem(this.novaMensagem);
