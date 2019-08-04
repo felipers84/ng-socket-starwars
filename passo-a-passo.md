@@ -52,6 +52,26 @@ $amarelo-star-wars: #ffd700;
   background-image: linear-gradient( black 50%, transparent 100%);
 }
 ```
+- Criar interface Mensagem
+
+```typescript
+export interface Mensagem {
+  mensagem: string;
+  dataHoramensagem: Date;
+}
+```
+- Em `app.component` criar método de `EnviarMensagem`, criando o array de mensagens
+  - public inserirMensagem(msg: String) {
+    this.mensagens.push({ mensagem: this.novaMensagem, dataHoramensagem: new Date() });
+    setTimeout(() => this.mensagens.splice(0), this.duracaoMensagemTelaEmSegundos * 1000);
+    //this.websocketService.enviarMensagem(this.novaMensagem);
+  }
+  - Criar um `<textarea>` e um botão:
+```html
+<textarea [(ngModel)]="texto" #txtArea rows="4" cols="100">Teste</textarea>
+<br>
+<button (click)="enviarTexto(txtArea.value); txtArea.value = ''">ENVIAR TEXTO</button>%
+```
 - `ng g s websocket-client`
 
 ```typescript
