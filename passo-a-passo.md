@@ -4,6 +4,7 @@
 - O `app.component` será utilizado para o display do texto
   - Criar um `<p>` com classe 'paragrafo'
     - Colocar texto dummy
+  - Criar uma `<div class="camada-gradiente">`
   - Abrir o `app.component.scss` para adicionar e definir o fundo preto e o estilo do parágrafo
   
 ```scss
@@ -41,7 +42,7 @@ $amarelo-star-wars: #ffd700;
   }
 }
 
-.gradient-overlay {
+.camada-gradiente {
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -50,21 +51,6 @@ $amarelo-star-wars: #ffd700;
   top: 0;
   background-image: linear-gradient( black 50%, transparent 100%);
 }
-
-.form-mensagem {
-  
-  z-index: 20;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 20px;
-  text-align: center;
-  * {
-    width: 100%;
-
-  }
-}
-
 ```
   
 - `ng g c terminal``
