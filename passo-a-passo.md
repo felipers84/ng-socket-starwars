@@ -72,9 +72,9 @@ export interface Mensagem {
 
   - Criar um `<textarea>` e um botão:
 ```html
-<textarea [(ngModel)]="texto" #txtArea rows="4" cols="100">Teste</textarea>
+<textarea #txtArea rows="4" cols="100">Teste</textarea>
 <br>
-<button (click)="enviarTexto(txtArea.value); txtArea.value = ''">ENVIAR TEXTO</button>%
+<button (click)="enviarMensagem(txtArea.value); txtArea.value = ''">ENVIAR TEXTO</button>%
 ```
 - `ng g s websocket-client`
 
@@ -101,7 +101,7 @@ export class AppComponent {
     websocketService.subMensagens.subscribe(mensagem => this.mensagens.push(mensagem));
   }
 
-  public inserirMensagem() {
+  public enviarMensagem() {
     this.mensagens.push({ mensagem: this.novaMensagem, dataHoramensagem: new Date() });
     this.websocketService.enviarMensagem(this.novaMensagem);
     this.novaMensagem = '';
