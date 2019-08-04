@@ -6,9 +6,10 @@
     - Colocar texto dummy
   - Abrir o `app.component.scss` para adicionar e definir o fundo preto e o estilo do parágrafo
   
-  ```scss
-  $amarelo-star-wars: #ffd700;
-  :host {
+```scss
+$amarelo-star-wars: #ffd700;
+
+:host {
   background-color: black;
   position: absolute;
   left: 0;
@@ -17,6 +18,7 @@
   height: 100%;
   overflow: hidden;
 }
+
 .rolling-paragraph {
   text-align: justify;
   position: absolute;
