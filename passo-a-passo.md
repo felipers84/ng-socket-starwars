@@ -8,8 +8,7 @@
   
   ```scss
   $amarelo-star-wars: #ffd700;
-
-:host {
+  :host {
   background-color: black;
   position: absolute;
   left: 0;
@@ -18,7 +17,6 @@
   height: 100%;
   overflow: hidden;
 }
-
 .rolling-paragraph {
   text-align: justify;
   position: absolute;
@@ -64,6 +62,7 @@
 
   }
 }
-  ```
+
+```
   
 - `ng g c terminal``
